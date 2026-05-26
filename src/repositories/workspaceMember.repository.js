@@ -34,7 +34,10 @@ class WorkspaceMemberRepository {
         return members_mapped
     }
 
-    async getByUserId(userId) {
+    async getByUserId(user_id) {
+        //Lista de membresias por x usuario
+        const result = await WorkspaceMember.find({ fk_user_id: user_id })
+        return result
     }
 
 }
